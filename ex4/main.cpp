@@ -28,7 +28,7 @@ int main() {
 
     printf("File size: %lld bytes\n", fileSize);
 
-    long maxChunkSize = sysconf(_SC_PAGE_SIZE) * 256; // About 1 MB on macOS
+    long maxChunkSize = sysconf(_SC_PAGE_SIZE) * 256; // 1 MB on macOS
 
     for (int i = 0; i < fileSize / maxChunkSize + 1; ++i) {
         long offset = i * maxChunkSize;
